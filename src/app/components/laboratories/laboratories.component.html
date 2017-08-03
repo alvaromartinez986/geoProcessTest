@@ -1,0 +1,33 @@
+<div class="row">
+  <div class="col-md-12 text-right">
+    <button
+    [routerLink] = "['/laboratory', 'new']"
+    type="button"
+    class="btn btn-outline-primary btn-lg"> Nuevo Laboratorio </button>
+  </div>
+</div>
+<br>
+<br>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-inverse table-hover">
+      <thead>
+        <tr>
+          <th>Código del Laboratorio</th>
+          <th>Nombre del Laboratorio</th>
+          <th>Direccion</th>
+          <th>Escuela/Departamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let laboratory of laboratories">
+          <th>{{ laboratory.cod_lab }}</th>
+          <th>{{ laboratory.nombre_de_laboratorio }}</th>
+          <th>{{ laboratory.direccion }}</th>
+          <th>{{ laboratory.escuela_o_departamento }}</th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
