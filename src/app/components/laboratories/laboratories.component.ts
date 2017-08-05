@@ -14,17 +14,24 @@ export class LaboratoriesComponent implements OnInit {
 
     this._firebaseService.getLaboratories()
         .subscribe(data =>{
-
-          for(let key$ in data){
-            let h = data[key$];
-            h.key$ = key$;
-            this.laboratories.push(data[key$]);
-          }
+          this.laboratories = data;
         })
 
   }
 
   ngOnInit() {
+  }
+
+
+  deleteLaboratory(key$:string){
+    this._firebaseService.deleteLaboratory(key$)
+              .subscribe(response=>{
+                if(response){
+                  console.log(response);
+                }else{
+                  delete this.laboratories[key$];
+                }
+              });
   }
 
 }

@@ -15,122 +15,135 @@
 
     <form (ngSubmit)="save()" #form = "ngForm">
 
-        <div class="form-group">
-          <label>Código</label>
-          <input [(ngModel)]="laboratory.cod_lab"
-          type="number"
-          class="form-control"
-          name="cod_lab" required>
+      <div class="row">
+        <div class="col-md-6">
+
+                  <div class="form-group">
+                    <label>Código</label>
+                    <input [(ngModel)]="laboratory.cod_lab"
+                    type="number"
+                    class="form-control"
+                    name="cod_lab" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" class="form-control" required [(ngModel)]="laboratory.nombre_de_laboratorio" name="nombre_de_laboratorio">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Dirección</label>
+                    <input type="text" class="form-control" required [(ngModel)]="laboratory.direccion" name="direccion">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="text" class="form-control" [(ngModel)]="laboratory.telefono_lab" name="telefono_lab">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Actividad</label>
+                    <input type="text" class="form-control" required [(ngModel)]="laboratory.actividad" name="actividad">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Área Conocimiento</label>
+                    <input type="text" class="form-control" [(ngModel)]="laboratory.area_conocimiento" name="area_conocimiento">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Año Fundación</label>
+                    <input type="date" class="form-control" required [(ngModel)]="laboratory.ano_de_fundacion" name="ano_de_fundacion">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Resolución</label>
+                    <input type="text" class="form-control" required [(ngModel)]="laboratory.resolucion_de_creacion" name="resolucion_de_creacion">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Cód. Georeferenciación</label>
+                    <input type="text" class="form-control" required [(ngModel)]="laboratory.cod_georef" name="cod_georef">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Cat. Docente</label>
+                    <input type="text" class="form-control" [(ngModel)]="laboratory.categoria_docente" name="categoria_docente">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Responsable</label>
+                    <input type="text" class="form-control" [(ngModel)]="laboratory.nombre_responsable" name="nombre_responsable">
+                  </div>
+
+                  <div class="form-group">
+                    <label>Télefono Responsable </label>
+                    <input type="text" class="form-control" [(ngModel)]="laboratory.telefono_responsable" name="telefono_responsable">
+                  </div>
+
         </div>
 
-        <div class="form-group">
-          <label>Nombre</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.nombre_de_laboratorio" name="nombre_de_laboratorio">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Identificación</label>
+            <input type="text" class="form-control" [(ngModel)]="laboratory.identificacion" name="identificacion">
+          </div>
+
+          <div class="form-group">
+            <label>Celular</label>
+            <input type="text" class="form-control" [(ngModel)]="laboratory.celular" name="celular">
+          </div>
+
+          <div class="form-group">
+            <label>Cargo</label>
+            <input type="text" class="form-control" [(ngModel)]="laboratory.cargo" name="cargo">
+          </div>
+
+          <div class="form-group">
+            <label>Email Universidad</label>
+            <input type="email" class="form-control" [(ngModel)]="laboratory.email_universidad" name="email_universidad">
+          </div>
+
+          <div class="form-group">
+            <label>Cód. Escuela</label>
+            <input type="number" class="form-control" required [(ngModel)]="laboratory.cod_escuela" name="cod_escuela">
+          </div>
+
+          <div class="form-group">
+            <label>Esc/Dep</label>
+            <input type="text" class="form-control" required [(ngModel)]="laboratory.escuela_o_departamento" name="escuela_o_departamento">
+          </div>
+
+          <div class="form-group">
+            <label>Cap. Estudiantes</label>
+            <input type="number" class="form-control" [(ngModel)]="laboratory.capacidad_estudiantes" name="capacidad_estudiantes">
+          </div>
+
+          <div class="form-group">
+            <label>Cap. Máx. Estudiantes</label>
+            <input type="number" class="form-control" required [(ngModel)]="laboratory.capacidad_maxima_estudiantes" name="capacidad_maxima_estudiantes">
+          </div>
+
+          <div class="form-group">
+            <label>Espacio</label>
+            <input type="text" class="form-control" required [(ngModel)]="laboratory.espacio" name="espacio">
+          </div>
+
+          <div class="form-group">
+            <label>Hora Semana</label>
+            <input type="text" class="form-control" [(ngModel)]="laboratory.hora_semana" name="hora_semana">
+          </div>
+
+          <div class="form-group">
+            <button  [disabled]="!form.valid!" type="submit" class="btn btn-outline-primary"> Guardar </button>
+          </div>
+
         </div>
 
-        <div class="form-group">
-          <label>Dirección</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.direccion" name="direccion">
-        </div>
+      </div>
 
-        <div class="form-group">
-          <label>Teléfono</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.telefono_lab" name="telefono_lab">
-        </div>
 
-        <div class="form-group">
-          <label>Actividad</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.actividad" name="actividad">
-        </div>
 
-        <div class="form-group">
-          <label>Área Conocimiento</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.area_conocimiento" name="area_conocimiento">
-        </div>
-
-        <div class="form-group">
-          <label>Año Fundación</label>
-          <input type="date" class="form-control" required [(ngModel)]="laboratory.ano_de_fundacion" name="ano_de_fundacion">
-        </div>
-
-        <div class="form-group">
-          <label>Resolución</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.resolucion_de_creacion" name="resolucion_de_creacion">
-        </div>
-
-        <div class="form-group">
-          <label>Cód. Georeferenciación</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.cod_georef" name="cod_georef">
-        </div>
-
-        <div class="form-group">
-          <label>Cat. Docente</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.categoria_docente" name="categoria_docente">
-        </div>
-
-        <div class="form-group">
-          <label>Responsable</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.nombre_responsable" name="nombre_responsable">
-        </div>
-
-        <div class="form-group">
-          <label>Télefono Responsable </label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.telefono_responsable" name="telefono_responsable">
-        </div>
-
-        <div class="form-group">
-          <label>Identificación</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.identificacion" name="identificacion">
-        </div>
-
-        <div class="form-group">
-          <label>Celular</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.celular" name="celular">
-        </div>
-
-        <div class="form-group">
-          <label>Cargo</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.cargo" name="cargo">
-        </div>
-
-        <div class="form-group">
-          <label>Email Universidad</label>
-          <input type="email" class="form-control" [(ngModel)]="laboratory.email_universidad" name="email_universidad">
-        </div>
-
-        <div class="form-group">
-          <label>Cód. Escuela</label>
-          <input type="number" class="form-control" required [(ngModel)]="laboratory.cod_escuela" name="cod_escuela">
-        </div>
-
-        <div class="form-group">
-          <label>Esc/Dep</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.escuela_o_departamento" name="escuela_o_departamento">
-        </div>
-
-        <div class="form-group">
-          <label>Cap. Estudiantes</label>
-          <input type="number" class="form-control" [(ngModel)]="laboratory.capacidad_estudiantes" name="capacidad_estudiantes">
-        </div>
-
-        <div class="form-group">
-          <label>Cap. Máx. Estudiantes</label>
-          <input type="number" class="form-control" required [(ngModel)]="laboratory.capacidad_maxima_estudiantes" name="capacidad_maxima_estudiantes">
-        </div>
-
-        <div class="form-group">
-          <label>Espacio</label>
-          <input type="text" class="form-control" required [(ngModel)]="laboratory.espacio" name="espacio">
-        </div>
-
-        <div class="form-group">
-          <label>Hora Semana</label>
-          <input type="text" class="form-control" [(ngModel)]="laboratory.hora_semana" name="hora_semana">
-        </div>
-
-        <div class="form-group">
-          <button  [disabled]="!form.valid!" type="submit" class="btn btn-outline-primary"> Guardar </button>
-        </div>
 
 
 

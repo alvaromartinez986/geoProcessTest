@@ -14,18 +14,32 @@
     <table class="table table-inverse table-hover">
       <thead>
         <tr>
-          <th>Código del Laboratorio</th>
-          <th>Nombre del Laboratorio</th>
+          <th>Código</th>
+          <th>Nombre</th>
           <th>Direccion</th>
           <th>Escuela/Departamento</th>
+          <th>Opcion</th>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let laboratory of laboratories">
-          <th>{{ laboratory.cod_lab }}</th>
-          <th>{{ laboratory.nombre_de_laboratorio }}</th>
-          <th>{{ laboratory.direccion }}</th>
-          <th>{{ laboratory.escuela_o_departamento }}</th>
+        <tr *ngFor="let k of laboratories | keys">
+          <th>{{ laboratories[k].cod_lab }}</th>
+          <th>{{ laboratories[k].nombre_de_laboratorio }}</th>
+          <th>{{ laboratories[k].direccion }}</th>
+          <th>{{ laboratories[k].escuela_o_departamento }}</th>
+          <th>
+              <button type="button" [routerLink] = "['/laboratory', k]"
+                class="btn btn-outline-success btn-sm">
+                <i class="fa fa-pencil-square-o"></i>
+                Editar
+              </button>
+              <button type="button" (click) = "deleteLaboratory(k)"
+                class="btn btn-outline-danger btn-sm">
+                <i class="fa fa-times"></i>
+                Eliminar
+              </button>
+
+          </th>
         </tr>
       </tbody>
     </table>

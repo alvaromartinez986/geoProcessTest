@@ -11,6 +11,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { LaboratoriesComponent } from './components/laboratories/laboratories.component';
 
+// pipes
+import { KeysPipe } from './pipes/keys.pipe';
 
 //services
 import { AuthService } from './services/auth.service';
@@ -25,7 +27,8 @@ import { LaboratoryComponent } from './components/laboratory/laboratory.componen
     NavbarComponent,
     HomeComponent,
     LaboratoriesComponent,
-    LaboratoryComponent
+    LaboratoryComponent,
+    KeysPipe
   ],
   imports: [
     BrowserModule,
